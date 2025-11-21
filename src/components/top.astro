@@ -1,0 +1,56 @@
+---
+// top.astroのコンポーネントスクリプト部分
+// ここにJavaScript/TypeScriptのロジックを記述できます
+const welcomeMessage = "2025年度 第一回 蛋白質科学会 若手研究者交流会";
+const eventDate = "2026年2月23-24日";
+---
+
+<!-- top.astroのテンプレート部分 -->
+<main>
+    <section class="hero">
+        <h1>{welcomeMessage}</h1>
+        <p class="date">{eventDate}</p>
+        <p class="sponsered">主催:蛋白質科学会</p>
+        <p class="co_host">共催: 多元研DEI推進委員会<p/>
+        <p class="sponsership">後援：東北大学先端生体高分子構造研究センター(ARCBS)<p/>
+        <p class="place">場所: 東北大学 片平さくらホール・多元研</p>
+    </section>
+    <style>
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background-color: yellowgreen;
+        }
+        .date {
+            font-weight: bold;
+            color:black;
+        }
+        .sponsered {
+            font-style: bold;
+            color:black;
+        }
+        .co_host {
+            font-style: bold;
+            color:black;
+        }
+        .sponsership {
+            font-style: bold;
+            color:black;
+        }
+        .place {
+            font-weight: bold;
+            color:black;
+        }
+    </style>
+
+    <section class="about">
+        <h2>交流会の目的</h2>
+        <p>若手研究者間の交流を深め、将来的な共同研究の機会を創出することを目的としています。</p>
+        <!-- ...その他の情報... -->
+    </section>
+</main>
+
+<style>
+    /* このコンポーネント専用のCSSを記述できます */
+    /* ... */
+</style>
