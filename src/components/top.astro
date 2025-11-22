@@ -1,8 +1,7 @@
-import "../styles/global.css";
-
 ---
 // top.astroのコンポーネントスクリプト部分
 // ここにJavaScript/TypeScriptのロジックを記述できます
+import "../styles/global.css";
 const welcomeMessage = "2025年度 第一回 蛋白質科学会 若手研究者交流会";
 const eventDate = "2026年 2月23-24日";
 ---
@@ -21,7 +20,8 @@ const eventDate = "2026年 2月23-24日";
         .hero {
             text-align: center;
             padding: 2rem;
-            background-color: yellowgreen;
+            background-color: whitesmoke;
+            font-style: italic;
         }
         .date {
             font-weight: bold;
@@ -76,6 +76,18 @@ const eventDate = "2026年 2月23-24日";
             color: #333;
         }
     </style>
+
+    <section class="map">
+        <iframe 
+        src="https://maps.app.goo.gl/LiZNjMMk1rQNre4f6" 
+        width="50%" 
+        height="200" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0"
+        title="Location Map"
+    > place
+    </iframe>
 
 </main>
 
