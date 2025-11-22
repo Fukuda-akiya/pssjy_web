@@ -2,46 +2,62 @@
 // top.astroのコンポーネントスクリプト部分
 // ここにJavaScript/TypeScriptのロジックを記述できます
 import "../styles/global.css";
+import { Image } from 'astro:assets';
+import LogoImage from '../assets/images/pssjy_logo.png';
+const fontHref = "https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap";
 const welcomeMessage = "2025年度 第一回 蛋白質科学会 若手研究者交流会";
 const eventDate = "2026年 2月23-24日";
 ---
 
 <!-- top.astroのテンプレート部分 -->
 <main>
+    <!-- Google Fonts を読み込む -->
+    <link href={fontHref} rel="stylesheet" />
+
     <section class="hero">
         <h1>{welcomeMessage}</h1>
+        <Image
+            src={LogoImage}
+            alt="蛋白質科学会ロゴ"
+            width={200}
+            height={200}
+        />
         <p class="date">{eventDate}</p>
         <p class="sponsered">主催:蛋白質科学会</p>
-        <p class="co_host">共催: 多元研DEI推進委員会<p/>
-        <p class="sponsership">後援：東北大学先端生体高分子構造研究センター(ARCBS)<p/>
+        <p class="co_host">共催: 多元研DEI推進委員会</p>
+        <p class="sponsership">後援：東北大学先端生体高分子構造研究センター(ARCBS)</p>
         <p class="place">場所: 東北大学 片平さくらホール・多元研</p>
     </section>
     <style>
         .hero {
             text-align: center;
             padding: 2rem;
-            background-color: whitesmoke;
-            font-style: italic;
+            background-color: white;
+            font-family: 'Sawarabi Mincho', sans-serif;
         }
         .date {
             font-weight: bold;
             color:black;
         }
         .sponsered {
-            font-style: bold;
+            font-weight: bold;
             color:black;
         }
         .co_host {
-            font-style: bold;
+            font-weight: bold;
             color:black;
         }
         .sponsership {
-            font-style: bold;
+            font-weight: bold;
             color:black;
         }
         .place {
             font-weight: bold;
             color:black;
+        }
+        .Image {
+            margin: 1rem 0;
+            align-items: left;
         }
     </style>
 
@@ -53,7 +69,7 @@ const eventDate = "2026年 2月23-24日";
         class="button-link" 
         >
         参加登録
-    </a>
+        </a>
     </section>
     <style>
         .link {
@@ -78,16 +94,30 @@ const eventDate = "2026年 2月23-24日";
     </style>
 
     <section class="map">
-        <iframe 
-        src="https://maps.app.goo.gl/LiZNjMMk1rQNre4f6" 
-        width="50%" 
-        height="200" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0"
-        title="Location Map"
-    > place
-    </iframe>
+        <h2>会場案内図</h2>
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.1518579823132!2d140.87493229999998!3d38.2527839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a281368acf0b5%3A0x3954ad8de8c50363!2z5p2x5YyX5aSn5a2mIOeJh-W5s-OBleOBj-OCieODm-ODvOODqw!5e0!3m2!1sja!2sjp!4v1763816874278!5m2!1sja!2sjp",
+        width="450" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+    <style>
+        .map {
+            text-align: right;
+            margin-right: 10rem;
+            margin-bottom: 2rem;
+            
+        }
+        .map h2 {
+            margin-bottom: 1rem;
+            text-align: right;
+            margin-right: 10rem
+        }
+    </style>
 
 </main>
 
