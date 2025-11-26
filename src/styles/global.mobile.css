@@ -29,8 +29,8 @@
 
 /* venue: stack contact and map vertically, remove large margins that were desktop-only */
 .venue {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
   align-items: stretch; /* make children stretch full width */
   gap: 0.75rem;
   margin: 1rem;
@@ -38,8 +38,8 @@
 }
 .venue .contact,
 .venue .map {
-  width: 100%;
-  max-width: none;
+  width: 100% !important;
+  max-width: none !important;
 }
 .venue .map iframe {
   display: block;
@@ -48,6 +48,22 @@
   aspect-ratio: 16/9; /* keep map readable */
   border: 0;
 }
+
+/* Ensure contact text does not collapse to a narrow column */
+.venue .contact .contents {
+  width: 100% !important;
+  max-width: none !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  writing-mode: horizontal-tb !important; /* prevent vertical text wrap */
+  overflow-wrap: anywhere !important;
+  line-height: 1.6;
+  padding: 0.5rem 0 !important;
+}
+
+/* order explicitly: contact first, map second */
+.venue .contact { order: 1 !important; }
+.venue .map { order: 2 !important; }
 
 /* map & other large-margin elements: remove huge right margins that were desktop-specific */
 .map { text-align: center; margin-right: 0; margin-left: 0; }

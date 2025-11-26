@@ -65,6 +65,38 @@ a:hover, a:focus { text-decoration: underline; }
 /* ---------- 6) レスポンシブ ---------- */
 @media (max-width: 900px) { .row { flex-direction: column; } :root { --flow-space: 0.75rem; } }
 
+/* Safety: mobile overrides in-case separate mobile stylesheet isn't loaded on the hosted site */
+@media (max-width: 900px) {
+	/* remove large desktop margins from several selectors */
+	.hero, .map, .program.contents, .program_title, .program.date, .contact .contents {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	/* ensure contact content and program content wrap normally and use full width */
+	.contact .contents, .program.contents {
+		width: 100% !important;
+		max-width: none !important;
+		white-space: normal !important;
+		word-break: break-word !important;
+		line-height: 1.6;
+		text-align: left;
+		margin: 0.75rem 1rem !important;
+	}
+
+	/* make map responsive and full-width */
+	.venue { flex-direction: column; gap: 1rem; margin: 1rem !important; padding: 0 0.5rem; }
+	.venue .contact, .venue .map { width: 100% !important; max-width: none !important; }
+	.venue .map iframe { width: 100% !important; height: auto !important; aspect-ratio: 16/9; display: block; }
+
+	/* make program schedule stack and use full width */
+	.schedule-row { grid-template-columns: 1fr !important; gap: 0.5rem; }
+	.schedule .time { text-align: left; padding-right: 0; }
+
+	/* ensure hero uses the viewport width rather than desktop margins */
+	.hero { padding: 1.25rem !important; margin: 1rem 0 !important; min-height: 240px !important; }
+	main { padding: 0 0.5rem; }
+}
+
 /* ---------- 7) アニメーション配慮 ---------- */
 @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
 
