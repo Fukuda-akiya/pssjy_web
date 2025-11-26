@@ -7,6 +7,9 @@
   padding: 1.25rem;
   min-height: 260px;
   background-position: top center;
+  /* override desktop large horizontal margins */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .hero .logo { max-width: 140px; }
@@ -32,6 +35,14 @@
 
 /* map & other large-margin elements: remove huge right margins that were desktop-specific */
 .map { text-align: center; margin-right: 0; margin-left: 0; }
+/* also remove any leftover big margins coming from global.css selectors */
+.program.contents, .program.contents * { margin-left: 0 !important; margin-right: 0 !important; }
+.contact .contents { margin-left: 0 !important; margin-right: 0 !important; margin: 1rem; padding: 0; }
+.map h2 { margin-right: 0 !important; }
+.map iframe { margin-right: 0 !important; width: 100% !important; }
+
+/* hero contents alignment */
+.hero_contents { margin: 0.5rem 1rem; }
 .program.contents { margin-left: 0; margin-right: 0; }
 
 /* Fix any stray very large margins used for desktop layout */
@@ -43,3 +54,9 @@
 
 /* Accessibility: increase tap targets a bit */
 .button-link, .link a { min-height: 40px; display: inline-flex; align-items: center; justify-content: center; }
+
+/* reduce any extreme desktop margins used elsewhere */
+.program.contents, .program_title, .program.date { margin-left: 0 !important; margin-right: 0 !important; }
+
+/* unify page padding for the small viewport */
+main { padding: 0 0.5rem; }
