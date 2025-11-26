@@ -1,0 +1,45 @@
+/* Mobile-only overrides for <900px (or use the media attribute to control exactly) */
+
+/* Keep this file small: only add overrides that differ from global.css */
+
+/* Ensure hero shows background well and stacks elements */
+.hero {
+  padding: 1.25rem;
+  min-height: 260px;
+  background-position: top center;
+}
+
+.hero .logo { max-width: 140px; }
+.hero h1 { font-size: 1.6rem; line-height: 1.25; }
+
+/* Smaller link button */
+.link { font-size: 1.1rem; margin: 1.25rem 0; }
+.button-link { padding: 0.5rem 0.75rem; font-size: 0.95rem; }
+
+/* content1 card — tighten for small screens */
+.content1 { margin: 1rem; padding: 1rem; font-size: 1rem; border-radius: 10px; }
+.content1::before { left: 8px; width: 5px; }
+
+/* schedule rows: stack time and desc (ensure grid collapses) */
+.schedule-row { grid-template-columns: 1fr; gap: 0.5rem; padding: 0.6rem 0; }
+.schedule .time { text-align: left; padding-right: 0; }
+
+/* venue: stack contact and map vertically, remove large margins that were desktop-only */
+.venue { flex-direction: column; gap: 1rem; margin: 1rem; }
+.venue .map { max-width: 100%; }
+.venue .map iframe { width: 100%; height: 320px; }
+.venue .contact { max-width: 100%; }
+
+/* map & other large-margin elements: remove huge right margins that were desktop-specific */
+.map { text-align: center; margin-right: 0; margin-left: 0; }
+.program.contents { margin-left: 0; margin-right: 0; }
+
+/* Fix any stray very large margins used for desktop layout */
+.map h2 { margin-right: 0; }
+.contact .contents { margin-left: 0; margin: 1rem; padding: 0; }
+
+/* Slight visual tune */
+.button-link { border-width: 1px; }
+
+/* Accessibility: increase tap targets a bit */
+.button-link, .link a { min-height: 40px; display: inline-flex; align-items: center; justify-content: center; }
