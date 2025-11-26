@@ -9,7 +9,7 @@ import bgfig from '../assets/images/nanoterasu.jpeg'
 // make a safe string URL we can pass to inline style
 const bgUrl = typeof bgfig === 'string' ? bgfig : (bgfig?.src ?? bgfig?.default ?? '');
 const fontHref = "https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap";
-const eventDate = "開催日: 2026年 2月24日";
+const eventDate = "開催日: 2026年 2月 24日";
 ---
 
 <!-- top.astroのテンプレート部分 -->
@@ -60,16 +60,26 @@ const eventDate = "開催日: 2026年 2月24日";
         プログラム
         </p>
 
-        <p class="program date">
-        2月24日<br>
-        </p>
-        
-        <p class="program contents">
-        11:00~12:00 NanoTerasu 蛋白質結晶構造解析エンドステーション見学会(人数限定・希望者のみ)<br>
-        13:00 開場<br>
-        13:30~14:50 講演<br>
-        15:00~17:30 ポスター発表<br>
-        </p>
+        <p class="program date">2月24日</p>
+
+        <div class="program schedule">
+            <div class="schedule-row">
+                <div class="time">11:00 — 12:00</div>
+                <div class="desc">NanoTerasu 蛋白質結晶構造解析エンドステーション見学会<br>（人数限定・希望者のみ）</div>
+            </div>
+            <div class="schedule-row">
+                <div class="time">13:00</div>
+                <div class="desc">開場</div>
+            </div>
+            <div class="schedule-row">
+                <div class="time">13:30 — 14:50</div>
+                <div class="desc">講演</div>
+            </div>
+            <div class="schedule-row">
+                <div class="time">15:00 — 17:30</div>
+                <div class="desc">ポスター発表</div>
+            </div>
+        </div>
     </section>
     <!-- content1 styles moved to src/styles/global.css; note selectors corrected (.program.date / .program.contents) -->
 

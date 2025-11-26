@@ -12,7 +12,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 	--bg: #ffffff;
 	--fg: #222222;
 	--muted: #6b7280;
-	--accent: #2563eb;
+	--accent: white-space;
 	--radius: 8px;
 	--max-width: 1100px;
 	--flow-space: 1rem;
@@ -23,10 +23,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bg:　white;
+		--bg: white;
 		--fg: #f3f4f6;
 		--muted: #9aa4b2;
-		--accent: #60a5fa;
+		--accent: white;
 	}
 }
 
@@ -82,8 +82,8 @@ a:hover, a:focus { text-decoration: underline; }
 	background-position: center;
 	background-repeat: no-repeat;
 	font-family: 'Arial', sans-serif;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 17rem;
+    margin-right: 17rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
 
@@ -136,35 +136,103 @@ a:hover, a:focus { text-decoration: underline; }
 	margin: 0.25rem 0;
 }
 
-.link { text-align: center; margin: 2rem 0; font-size: 1.5rem; }
+.link {
+	text-align: center;
+	margin: 2rem 0;
+	font-size: 2rem; /* 2.0rem works, but 2rem is the conventional form */
+	font-family: Arial, Helvetica, sans-serif; /* don't quote the generic family names */
+	font-weight: 600; /* use font-weight for bold, not font-style */
+}
 
-.content1 { text-align: center; margin: 2rem 2rem; font-size: 1.2rem; font-family: 'Arial', sans-serif;}
-.explanation { color: black; font-family: 'Arial', sans-serif;}
-.program_title { text-align: center; font-size: 1.8rem; font-weight: 700; margin-top: 2rem; color:#000; padding: 1rem; }
+.content1 {
+	max-width: 900px;
+	margin: 2.5rem auto; /* center on page */
+	padding: 1.25rem 1.5rem;
+	font-size: 1.05rem;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #111;
+	text-align: left;
 
-.program.date { text-align: center; font-weight: 700; margin-top: 2rem; font-size: 1.5rem; }
-.attention { font-weight: 700; color: black}
-.program.contents { text-align: left; white-space: pre-line; color:#000; margin-left: 5rem}
+	/* Card / minimalist look */
+	background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.72));
+	border-radius: 12px;
+	border: 1px solid rgba(16,24,32,0.06);
+	box-shadow: 0 8px 30px rgba(8,20,40,0.06);
 
-.map { text-align: right; margin-right: 7.5rem; margin-bottom: 2rem; }
-.map h2 { margin-bottom: 1rem; text-align: right; margin-right: 10rem; }
+	/* subtle accent left bar */
+	position: relative;
+	overflow: visible;
+}
 
-.button-link { display: inline-block; padding: 0.5rem 1rem; background: var(--accent, #2563eb); color: white; border-radius: 6px; text-decoration: none; }
+/* slight accent stripe on the left to give a modern card feel */
+.content1::before {
+	content: "";
+	position: absolute;
+	left: -1px;
+	top: 12px;
+	height: calc(100% - 24px);
+	width: 5px;
+	border-radius: 6px;
+	background: linear-gradient(180deg, rgba(37,50,50,0.95), rgba(100,210,255,0.8));
+}
 
-.contact .contents { text-align: left; font-size: 1.2rem; margin: 2.5rem; margin-left: 5rem; font-family: 'Arial', sans-serif; color:#000; padding: 10;}
+.content1 .explanation { text-align: left; margin: 0; margin-left:2.3rem}
 
 @media (max-width: 900px) {
-	.map { text-align: center; margin-right: 0; }
-	.map iframe { width: 100%; height: 300px; }
+	.content1 { margin: 1rem; padding: 1rem; font-size: 1rem; border-radius: 10px; }
+	.content1::before { left: 6px; top: 10px; height: calc(100% - 20px); width: 5px; }
+}
+.explanation { color: black; font-family: 'Arial', sans-serif;}
+.program_title { text-align: center; font-size: 1.8rem; font-weight: 700; margin-top: 2rem; color:#000; padding: 1.5rem; }
+
+.program.date { text-align: center; font-weight: 700; margin-top: 0rem; font-size: 1.5rem; }
+.attention { font-weight: 700; color: black}
+.program.contents { text-align: left; white-space: pre-line; color:#000; margin-left: 17rem; margin-right:17rem}
+
+/* schedule grid: time column + description column */
+.schedule { display: block; margin: 1rem auto; max-width: 900px; }
+.schedule-row { display: grid; grid-template-columns: 160px 1fr; gap: 1rem; align-items: start; padding: 0.5rem 0; border-bottom: 2px dashed rgba(0,0,0,0.15); }
+.schedule-row:last-child { border-bottom: none; }
+.schedule .time { font-weight: 700; text-align: right; color: #111; padding-right: 1rem; }
+.schedule .desc { text-align: left; color: #111; }
+
+@media (max-width: 700px) {
+	.schedule-row { grid-template-columns: 1fr; }
+	.schedule .time { text-align: left; padding-right: 0; margin-bottom: 0.25rem; }
+}
+
+.map { text-align: right; margin-right: 17rem; margin-bottom: 2rem; }
+.map h2 { margin-bottom: 1rem; text-align: right; margin-right: 8rem; }
+
+.button-link { display: inline-block; padding: 0.5rem 1rem; background: var(--accent,black); color: black; border-radius: 6px; text-decoration: none; }
+.button-link {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	background: var(--accent, #2563eb);
+	color:　black;
+	border-radius: 6px;
+	text-decoration: none;
+	border: 2px solid #000; /* black border */
+}
+
+/* hover / focus states for better UX and accessibility */
+.button-link:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.12); transform: translateY(-1px); }
+.button-link:focus { outline: 3px solid rgba(0,0,0,0.15); outline-offset: 2px; }
+
+.contact .contents { text-align: left; font-size: 1.2rem; margin: 2.5rem; margin-left: 17rem; font-family: 'Arial', sans-serif; color:#000; padding: 10;}
+
+@media (max-width: 900px) {
+	.map { text-align: center; margin-right: 17rem; }
+	.map iframe { width: 100%; height: 300px; margin-right: 17rem;}
 	.link { font-size: 1.2rem; }
 }
 
 /* ---------- venue: contact left, map right (used in top.astro) ---------- */
 .venue { display: flex; gap: 2rem; align-items: flex-end; justify-content: space-between; margin: 2rem;}
-.venue .contact { flex: 1 1 360px; max-width: 480px; text-align: left; align-self: flex-end; }
+.venue .contact { flex: 1 1 500px; max-width: 800px; text-align: left; align-self: flex-end; }
 .venue .contact .contents { font-size: 1rem; line-height: 1.4; color: black; }
-.venue .map { flex: 1 1 480px; max-width: 720px; }
-.venue .map iframe { width: 100%; height: 100%; min-height: 300px; }
+.venue .map { flex: 1 1 480px; max-width: 480px; }
+.venue .map iframe { width: 80%; height: 100%; min-height: 300px; }
 
 @media (max-width: 900px) {
   .venue { flex-direction: column; margin: 1rem; }
