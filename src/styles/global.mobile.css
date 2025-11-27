@@ -62,8 +62,8 @@
 }
 
 /* order explicitly: contact first, map second */
-.venue .map { order: 1 !important; }
-.venue .contact { order: 2 !important; }
+.venue .map { order: 2 !important; }
+.venue .contact { order: 1 !important; }
 
 /* map & other large-margin elements: remove huge right margins that were desktop-specific */
 .map { text-align: left; margin-right: 0; margin-left: 0; }
