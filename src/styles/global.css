@@ -149,7 +149,9 @@ a:hover, a:focus { text-decoration: underline; }
 .hero > * { position: relative; z-index: 1; }
 
 .hero_contents {
-    text-align: center;
+	margin: 16px auto;
+    display: block;
+	text-align: center;
     padding: 0.5rem;
     font-family: "Arial", sans-serif;
     font-size: 1.5rem;
@@ -163,15 +165,12 @@ a:hover, a:focus { text-decoration: underline; }
 	height: auto;
 }
 
-.date,
-.fee,
-.sponsered,
-.co_host,
-.sponsership,
-.place {
+.hero_contents .text {
 	font-weight: 700;
 	color: #000;
 	margin: 0.25rem 0;
+	text-align: left;
+	display: inline-block;
 }
 
 .link {
@@ -183,13 +182,14 @@ a:hover, a:focus { text-decoration: underline; }
 }
 
 .content1 {
+	display:block;
 	max-width: 900px;
 	margin: 2.5rem auto; /* center on page */
 	padding: 1.25rem 1.5rem;
 	font-size: 1.05rem;
 	font-family: Arial, Helvetica, sans-serif;
 	color: #111;
-	text-align: left;
+	text-align: center;
 
 	/* Card / minimalist look */
 	background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.72));
@@ -214,7 +214,7 @@ a:hover, a:focus { text-decoration: underline; }
 	background: linear-gradient(180deg, rgba(37,50,50,0.95), rgba(100,210,255,0.8));
 }
 
-.content1 .explanation { text-align: center; margin: 0; }
+.content1 .explanation { text-align: left; margin: 0; display:inline-block;}
 
 @media (max-width: 900px) {
 	.content1 { margin: 1rem; padding: 1rem; font-size: 1rem; border-radius: 10px; }
@@ -254,9 +254,9 @@ a:hover, a:focus { text-decoration: underline; }
 .button-link:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.12); transform: translateY(-1px); }
 .button-link:focus { outline: 3px solid rgba(0,0,0,0.15); outline-offset: 2px; }
 
-.contact { text-align: center; padding:2rem}
+.contact { text-align: center; padding:2rem; display: block}
 .contact .h2 {text-align: center; font-size: 1rem;}
-.contact .contents { font-size: 1rem; line-height: 1.4; color: black; padding: 0rem; width: fit-content; text-align: center; width: auto; margin:0 auto;}
+.contact .contents { font-size: 1rem; line-height: 1.4; color: black; padding: 0rem; width: fit-content; text-align: left; width: auto; margin:0 auto; display:inline-block}
 .map {align-items: center; text-align: center;}
 .map .h3 {text-align: center; font-size: 3rem;}
 .map iframe { width: 45%; height: 500px;}
