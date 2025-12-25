@@ -5,13 +5,9 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 // 現在のページのパス（例: /about や /en/about）を取得
 const { pathname } = Astro.url;
 
-// パスから現在の言語を除去して、純粋なページパスを取り出す
-// 例: /en/about -> /about
-const currentPath = pathname.replace(/^\/(en|jp)/, '');
-
 // 日本語版と英語版それぞれのURLを生成
-const jpUrl = getRelativeLocaleUrl('jp', currentPath);
-const enUrl = getRelativeLocaleUrl('en', currentPath);
+const jpUrl = getRelativeLocaleUrl('jp', '');
+const enUrl = getRelativeLocaleUrl('en', '');
 ---
 
 <div class="lang-picker">
