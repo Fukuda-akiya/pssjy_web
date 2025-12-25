@@ -14,7 +14,7 @@ import LanguagePicker from '../components/languagepicker.astro';
 // make a safe string URL we can pass to inline style
 const bgUrl = typeof bgfig === 'string' ? bgfig : (bgfig?.src ?? bgfig?.default ?? '');
 const fontHref = "https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap";
-const eventDate = "開催日: 2026年 2月 24日";
+const eventDate = "Date: February 24th (Tue), 2026";
 ---
 
 <!-- top.astroのテンプレート部分 -->
@@ -42,23 +42,23 @@ const eventDate = "開催日: 2026年 2月 24日";
             height={150}
         />
         <Image src={LogoImram} alt="多元研ロゴ" width={140} height={140}></Image>
-        <h1>2025年度<br>第一回 蛋白質科学 若手研究者交流会</h1>
+        <h1>The 1st Protein Science Workshop<br>for Young Researchers (FY2025)</h1>
     </section>
     <section class="hero_contents">
         <p class="text">
         {eventDate}<br>
-        参加費：無料<br>
-        場所：東北大学片平キャンパス さくらホール<br>
+        Registration fee: Free<br>
+        Venue：Sakura Hall at Katahira Campus, Tohoku University<br>
         <br>
-        主催：蛋白質科学会<br>
-        共同主催：多元物質科学研究所DEI推進委員会<br>
-        後援：先端生体高分子構造研究センター(ARCBS)<br>
+        Host: The Protein Science Society of Japan<br>
+        Co-hosted by Committee for DEI of IMRAM<br>
+        Sponsered by ARCBS<br>
         </p>
     </section>
     <!-- styles for .hero moved to src/styles/global.css -->
 
     <section class="deadline">
-        <p>登録締切：2月17日</p>
+        <p>Registration deadline：February 17th, 2026</p>
     </section>
 
     <section class="link">
@@ -68,51 +68,51 @@ const eventDate = "開催日: 2026年 2月 24日";
         rel="noopener noreferrer" 
         class="button-link" 
         >
-        参加登録
+        Register Here
         </a>
     </section>
     <!-- styles for .link moved to src/styles/global.css -->
     
     <section class="content1">
         <p class="explanation">
-            広義の生命科学研究に取り組む若手研究者を対象とした交流会を開催します。<br>
-                               若手研究者のキャリアパスや研究への取り組みを紹介する講演会とポスター発表の機会を設けます。<br>
-                               ポスター発表は学生、ポスドク、助教など概ね40歳以下を対象とします。<br>
-                               本交流会が、研究発表を通した交流並びに研究推進のヒントを得る機会とすることを期待します。</p>
+            We are pleased to announce a networking workshop dedicated to early-career researchers engaged in the broad field of life sciences.<br>
+            The event will feature keynote lectures focusing on the career paths and research methodologies of young scientists, as well as a poster session.<br> 
+            The poster session is open to students, postdoctoral fellows, and assistant professors, generally those aged 40 and under.<br>
+            We hope this workshop will serve as a platform for fostering collaboration through research presentations and providing valuable insights to further your scientific endeavors.</p>
 
         <p class="program_title">
-        プログラム
+        Program
         </p>
 
-        <p class="program date">2月24日</p>
+        <p class="program date">February 24th</p>
 
         <div class="program schedule">
             <div class="schedule-row">
                 <div class="time">11:00 — 12:00</div>
-                <div class="desc">NanoTerasu 蛋白質結晶構造解析エンドステーション見学会<br>※ 希望者のみ・先着20名</div>
+                <div class="desc">Facility Tour: Protein Crystallography Endstations at NanoTerasu<br>(※ Optional / Limited to 20)</div>
             </div>
             <div class="schedule-row">
                 <div class="time">13:00</div>
-                <div class="desc">開場</div>
+                <div class="desc">Opening</div>
             </div>
             <div class="schedule-row">
                 <div class="time">13:30 — 14:50</div>
                 <div class="desc">
-                    講演<br>
+                    Keynote Lectures<br>
                     <br>
-                    東北大学 学際化学フロンティア研究所 奥村正樹先生<br>
-                    題目「情熱と冷静のバランス」<br>
+                    Professor Masaki Okumura, Institute of Interdisciplinary Chemistry and Biotechnology, Tohoku University<br>
+                    Title: "The Balance of Passion and Calmness"<br>
                     <br>
-                    東北大学 多元物質科学研究所 福山真央先生<br>
-                    題目「私はなぜ蛋白質を研究対象とするに至ったのか」<br>
+                    Professor Maoko Fukuyama, Institute of Multidisciplinary Materials Science, Tohoku University<br>
+                    Title: "Why I Chose Protein Research"<br>
 
                 </div>
             </div>
             <div class="schedule-row">
                 <div class="time">15:00 — 17:30</div>
                 <div class="desc">
-                    ポスター発表<br>
-                    ※ 英語での作成を推奨<br>
+                    Poster presentations<br>
+                    （※ Recommended in English）<br>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@ const eventDate = "開催日: 2026年 2月 24日";
     <!-- venue block: contact left, map right -->
         
     <div class="map">
-        <h3>会場案内図</h3>
+        <h3>Venue Guide Map</h3>
             <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.1518579823132!2d140.87493229999998!3d38.2527839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a281368acf0b5%3A0x3954ad8de8c50363!2z5p2x5YyX5aSn5a2mIOeJh-W5s-OBleOBj-OCieODm-ODvOODqw!5e0!3m2!1sja!2sjp!4v1763816874278!5m2!1sja!2sjp",
             width="450" 
@@ -135,12 +135,12 @@ const eventDate = "開催日: 2026年 2月 24日";
     </div>
 
     <section class="contact">
-        <h2>連絡先</h2>
+        <h2>Contact</h2>
         <p class="contents">
-        南後 恵理子<br>
-        (東北大・多元物質科学研究所)<br>
+        Eriko Nango<br>
+        (Tohoku University, Institute of Multidisciplinary Materials Science)<br>
         〒980-8577<br>
-        仙台市青葉区片平 2-1-1<br>
+        2-1-1, Aoba, Sendai City<br>
         (TEL) 022-217-5344<br>
         e-mail: eriko.nango.c4@tohoku.ac.jp<br>
         </p>
@@ -152,7 +152,7 @@ const eventDate = "開催日: 2026年 2月 24日";
     <section class="co-host">
         <section class="co-host_title">
             <h4 class="contents">
-            共催・後援
+            Sponsered by
             </h4>
         </section>
     </section>

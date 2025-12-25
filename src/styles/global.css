@@ -63,9 +63,37 @@ a:hover, a:focus { text-decoration: underline; }
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0 0 0 0); overflow: hidden; white-space: nowrap; }
 
 /* ---------- 5) ヘッダー / ナビ / フッター の例 ---------- */
-.site-header { border-bottom: 1px solid rgba(0,0,0,0.06); background: transparent; }
+/* .site-header { border-bottom: 1px solid rgba(0,0,0,0.06); background: transparent; } */
 .site-nav { display: flex; gap: 1rem; align-items: center; }
 .site-title { font-weight: 700; }
+.site-header {
+    position: sticky; /* スクロールしても上部に固定 */
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* 少し透ける白 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1200px; /* mainの幅に合わせる */
+    margin: 0 auto;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between; /* 両端に寄せる */
+    align-items: center;
+}
+
+/* 言語スイッチのスタイル調整 */
+.header-lang {
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+}
+
+/* mainがヘッダーの下に隠れないように調整（必要に応じて） */
+main {
+    margin-top: 0;
+}
 
 /* ---------- 6) レスポンシブ ---------- */
 @media (max-width: 900px) { .row { flex-direction: column; } :root { --flow-space: 0.75rem; } }
@@ -120,7 +148,7 @@ a:hover, a:focus { text-decoration: underline; }
 	background-repeat: no-repeat;
 	font-family: 'Arial', sans-serif;
 	/* center hero, allow full width under max-width container */
-	margin: 2rem auto 1rem auto;
+	margin: 0rem auto 1rem auto;
 	width: 100%;
 	max-width: var(--max-width);
 
