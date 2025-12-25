@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  i18n: {
+  site: 'https://github.com',
+  base: 'pssjy_web',
+    i18n: {
     defaultLocale: 'jp',
     locales: ['jp', 'en'],
     routing: {
